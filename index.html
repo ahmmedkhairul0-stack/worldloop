@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101a2d"><meta name="description" content="WORLDLOOP — discover, learn and share ideas across the world.">
+<title>WORLDLOOP — Discover · Learn · Share</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<header class="topbar"><a class="brand" href="#"><span class="mark">W</span> WORLD<span>LOOP</span></a>
+<nav><a href="#discover">Discover</a><a href="#how">How it works</a></nav>
+<div class="head-actions"><span id="userLabel" class="user-label"></span><button class="btn ghost" id="authBtn">Log in</button><button class="btn primary" id="postBtn">Share a lesson +</button><button class="btn ghost hidden" id="logoutBtn">Log out</button></div></header>
+<main>
+<section class="hero"><div class="hero-copy"><div class="eyebrow"><i></i> A LITTLE KNOWLEDGE. A BIGGER WORLD.</div><h1>Good ideas have<br><em>no borders.</em></h1><p>Discover a new perspective, learn a useful skill, and share something from your corner of the world.</p><div class="hero-actions"><a class="btn primary" href="#discover">Explore lessons <b>→</b></a><button class="btn outline" id="heroPost">Share what you know +</button></div><div class="proof"><span>🌎</span><span>📚</span><span>💡</span><small>A world of things to learn</small></div></div>
+<div class="hero-art"><div class="orbit"></div><div class="globe">✦</div><div class="float f1">🌐 <span><b>Culture</b><small>New perspectives</small></span></div><div class="float f2">Aa <span><b>Language</b><small>Words connect us</small></span></div><div class="float f3">✳ <span><b>Creativity</b><small>Make something</small></span></div></div></section>
+<div class="ticker">✦ LANGUAGE　 ✦ CULTURE　 ✦ ART & DESIGN　 ✦ EVERYDAY SKILLS　 ✦ CREATIVE THINKING　 ✦ COMMUNITY</div>
+<section class="section" id="discover"><div class="section-head"><div><div class="eyebrow">THE WORLD, IN SMALL LESSONS</div><h2>Find your next <em>aha moment.</em></h2><p>Short, thoughtful lessons shared by curious people around the world.</p></div><div class="stats"><b id="lessonCount">—</b><small>approved lessons</small></div></div>
+<div class="toolbar"><input id="search" type="search" placeholder="Search lessons, topics or places…"><div id="filters" class="filters"><button class="filter active" data-filter="ALL">All</button><button class="filter" data-filter="LANGUAGE">Language</button><button class="filter" data-filter="CULTURE">Culture</button><button class="filter" data-filter="CREATIVITY">Creativity</button><button class="filter" data-filter="ART">Art</button><button class="filter" data-filter="SKILLS">Skills</button></div></div>
+<div id="lessonGrid" class="lesson-grid"><div class="loading">Loading lessons…</div></div><p id="empty" class="empty hidden">No lessons found. Try another search.</p></section>
+<section class="how" id="how"><div class="eyebrow">SIMPLE BY DESIGN</div><h2>Learn something. <em>Pass it on.</em></h2><div class="steps"><article><b>01</b><h3>Discover</h3><p>Explore bite-sized ideas and practical tips from different places.</p></article><article><b>02</b><h3>Learn</h3><p>Save lessons and mark the things you have learned.</p></article><article><b>03</b><h3>Share</h3><p>Contribute something useful. Every new lesson is reviewed before it appears publicly.</p></article></div></section>
+<section class="join"><div class="eyebrow">YOUR PERSPECTIVE BELONGS HERE</div><h2>What will you bring<br>to the <em>loop?</em></h2><p>Start with curiosity. Stay for the perspectives.</p><button class="btn light" id="joinBtn">Join the community →</button><small>Be kind · Share knowledge · Respect privacy</small></section>
+</main><footer><a class="brand" href="#"><span class="mark">W</span> WORLD<span>LOOP</span></a><p>Discover · Learn · Share</p><small>© <span id="year"></span> WORLDLOOP</small></footer>
+
+<div class="overlay hidden" id="modal"><section class="dialog"><button class="x" data-close>×</button><div class="mark">W</div><div class="eyebrow">WELCOME TO WORLDLOOP</div><h2 id="modalTitle">Join the loop.</h2><p id="modalText" class="muted">Create an account to save lessons and share what you know.</p>
+<div id="authPanel"><div class="tabs"><button class="tab active" data-mode="signup">Sign up</button><button class="tab" data-mode="login">Log in</button></div>
+<form id="authForm"><label>Email</label><input id="email" type="email" autocomplete="email" required maxlength="254"><label>Password</label><input id="password" type="password" autocomplete="new-password" minlength="8" required><label id="nameLabel">Display name</label><input id="displayName" maxlength="32" required autocomplete="nickname"><button class="btn primary full" id="authSubmit">Create account →</button></form><button class="text-button" id="resetPassword">Forgot password?</button></div>
+<div id="postPanel" class="hidden"><form id="lessonForm"><label>Lesson title</label><input id="lessonTitle" maxlength="90" required><label>Topic</label><select id="lessonCategory" required><option value="LANGUAGE">Language</option><option value="CULTURE">Culture</option><option value="CREATIVITY">Creativity</option><option value="ART">Art</option><option value="SKILLS">Skills</option></select><label>Country or region (optional)</label><input id="lessonCountry" maxlength="40" placeholder="e.g. Bangladesh"><label>Your short lesson</label><textarea id="lessonBody" rows="5" maxlength="1200" required placeholder="Share something useful, accurate and kind…"></textarea><button class="btn primary full">Submit for review →</button></form><p class="tiny muted">Submissions are private until approved by a moderator. Do not include phone numbers, addresses, school details or other private information.</p></div>
+<div id="detailPanel" class="hidden"></div>
+<p class="tiny muted">Never share passwords or private contact details with other users. Keep interactions respectful.</p></section></div>
+<div class="toast" id="toast"></div>
+<script type="module" src="js/app.js"></script>
+</body></html>

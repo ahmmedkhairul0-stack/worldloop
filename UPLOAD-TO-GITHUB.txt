@@ -1,0 +1,16 @@
+WORLDLOOP — GitHub upload package
+
+This ZIP is already configured with your Supabase Project URL and publishable key.
+
+IMPORTANT: Do not upload this ZIP as the website itself. Extract it first, then upload ALL extracted files and folders directly into the ROOT of your GitHub repository (the same level as index.html).
+
+You should see this structure in GitHub:
+index.html
+styles.css
+js/config.js
+js/app.js
+supabase/migrations/001_worldloop.sql
+README.md
+SETUP.md
+
+Never add a Supabase service_role or secret key to browser files.
