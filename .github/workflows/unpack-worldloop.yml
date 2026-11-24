@@ -1,0 +1,32 @@
+name: Unpack WORLDLOOP website
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  unpack:
+    if: github.event_name == 'workflow_dispatch' || !hashFiles('index.html')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Extract website files
+        run: |
+          test -f WORLDLOOP-ready-to-upload.zip
+          unzip -o WORLDLOOP-ready-to-upload.zip -d .
+          test -f index.html
+          test -f styles.css
+          test -f js/app.js
+      - name: Commit extracted website
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html styles.css js supabase README.md SETUP.md vercel.json UPLOAD-TO-GITHUB.txt
+          if git diff --cached --quiet; then
+            echo "No extracted website changes to commit."
+          else
+            git commit -m "Add extracted WORLDLOOP website files"
+            git push
+          fi
